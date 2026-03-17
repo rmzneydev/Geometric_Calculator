@@ -20,6 +20,8 @@ def get_input(message, data_type):
     while not valid_input:
         try:
             user_input = input(message).lower().strip()
+            if data_type == float:
+                user_input = user_input.replace(",",".")
             user_input = data_type(user_input)
             if user_input <=0:
                 print(f"[ERROR] El dato no puede ser menor o igual a 0")
