@@ -1,14 +1,19 @@
-def get_figuras():
-    figuras = ["Triángulo",
-        "Triángulo rectángulo",
-        "Rectángulo",
-        "Hexágono",
-        "Círculo",
-        "Cubo",
-        "Esfera",
-        "Cilindro",
-        "Prisma rectangular"]
-    return figuras
+def get_figuras(tipo_figuras=""):
+
+    figuras_2d = ["Triángulo", "Triángulo rectángulo", "Rectángulo", "Hexágono", "Círculo"]
+    figuras_3d = ["Cubo", "Esfera", "Cilindro", "Prisma rectangular"]
+    all_figures = figuras_2d + figuras_3d
+
+    if tipo_figuras == "2D":
+        return figuras_2d
+    elif tipo_figuras == "3D":
+        return figuras_3d
+    else:
+        return all_figures
+
+def get_calculos():
+    calculos = ["Perimetro", "Ángulos", "Area", "Volumen", "Circunferencia"]
+    return calculos
 
 def get_input(message, data_type):
     valid_input = False
@@ -26,10 +31,6 @@ def get_input(message, data_type):
         except ValueError:
             print(f"[ERROR] Entrada no válida. Por favor, ingrese un valor del tipo ({(data_type).__name__}).")
     return value
-
-def get_calculos():
-    calculos = ["Perimetro", "Ángulos", "Area", "Volumen", "Circunferencia"]
-    return calculos
 
 def calculate(num_figura, nombre_calculo):
     nombre_figura = get_figuras()[num_figura-1]
