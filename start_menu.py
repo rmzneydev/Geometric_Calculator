@@ -39,11 +39,14 @@ menu = 0
 num_fig = 0
 num_calculo = 0
 calc_disp = []
+figuras = []
 tipo_figura = ""
 
 salir = False
 while not salir:
-
+    print("="*23)
+    print("Calculadora Geometrica")
+    print("="*23)
     valid_sel = False
     while not valid_sel and menu == 0:
         menu__tipos_figuras()
