@@ -75,22 +75,6 @@ python start_menu.py
 
 ------------------------------------------------------------------------
 
-# Example Usage
-
-MENU \[Tipos de Figuras\] (1) Figuras 2D (2) Figuras 3D (X) -\> Salir
-
-Ingrese opcion: 1
-
-MENU \[Lista de Figuras 2D\] (1) Triángulo (2) Triángulo rectángulo (3)
-Rectángulo (4) Hexágono (5) Círculo
-
-MENU \[Lista de Calculos disponibles\] (1) Perimetro (2) Ángulos (3)
-Area
-
-The program then asks for the necessary values and prints the result.
-
-------------------------------------------------------------------------
-
 # Input Validation
 
 The program includes validation to ensure:
@@ -98,11 +82,6 @@ The program includes validation to ensure:
 -   Only valid numbers are accepted
 -   Values must be greater than zero
 -   Angles follow geometric rules (e.g., triangle angle sum \< 180°)
-
-Example:
-
-\[ERROR\] Entrada no válida. Por favor, ingrese un valor del tipo
-(float).
 
 ------------------------------------------------------------------------
 
