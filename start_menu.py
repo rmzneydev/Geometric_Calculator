@@ -1,28 +1,31 @@
 from calculations import get_calculos, get_figuras, calculate
 
-def menu_calculos(num_fig):
+def menu_calculos(num_fig, tipo_figura):
     calculos = get_calculos()
     calc_x_figura = []
     
-    num_fig -=1
 
-    if num_fig == 4: # CIRCLE CASE
-        calc_x_figura.append(calculos[4])
-        calc_x_figura.append(calculos[1])
-        calc_x_figura.append(calculos[2])
-    elif num_fig <=4: # 2D FIGURES
-        calc_x_figura.append(calculos[0])
-        calc_x_figura.append(calculos[1])
-        calc_x_figura.append(calculos[2])
-    else: # 3D FIGURES
+    if tipo_figura == "2D":
+        if num_fig == 5:
+            calc_x_figura.append(calculos[4])
+            calc_x_figura.append(calculos[1])
+            calc_x_figura.append(calculos[2])
+        else:
+            calc_x_figura.append(calculos[0])
+            calc_x_figura.append(calculos[1])
+            calc_x_figura.append(calculos[2])
+    
+
+    else: 
         calc_x_figura.append(calculos[2])
         calc_x_figura.append(calculos[3])
 
-    print("MENU [Lista de Calculos disponibles]")
-    for i in range(0, len(calc_x_figura), 1):
+    print("\nMENU [Lista de Calculos disponibles]")
+    for i in range(len(calc_x_figura)):
         print(f"({i+1}) {calc_x_figura[i]}")
     
     return calc_x_figura
+
     
 def menu_figuras(tipo_figuras):
     figuras = get_figuras(tipo_figuras)
@@ -99,7 +102,7 @@ while not salir:
         print("\n" + "=" *50)
         print(f"[Figura Seleccionada] -> (#{num_fig}. {figura})")
         print("=" *50)
-        calc_disp = menu_calculos(num_fig)
+        calc_disp = menu_calculos(figura, tipo_figura)
         try:
             print("(R) -> Volver al menu anterior\n(X) -> Salir")
             seleccion = input("Ingrese opcion: ").lower().strip()
@@ -122,7 +125,7 @@ while not salir:
     
     if menu == 3:
         nom_calculo = calc_disp[num_calculo-1]
-        calculate(num_fig, nom_calculo)
+        calculate(num_fig, nom_calculo, tipo_figura)
 
         valid_sel = False
         while not valid_sel:

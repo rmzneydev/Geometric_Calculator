@@ -34,8 +34,9 @@ def get_input(message, data_type):
             print(f"[ERROR] Entrada no válida. Por favor, ingrese un valor del tipo ({(data_type).__name__}).")
     return value
 
-def calculate(num_figura, nombre_calculo):
-    nombre_figura = get_figuras()[num_figura-1]
+def calculate(num_figura, nombre_calculo, tipo_figura):
+    figuras_especificas = get_figuras(tipo_figura)
+    nombre_figura = figuras_especificas[num_figura-1]
     print("=" *50)
     print(f"[FIGURA] -> ({nombre_figura})\n[CALCULAR] -> ({nombre_calculo}) ")
     print("=" *50)
